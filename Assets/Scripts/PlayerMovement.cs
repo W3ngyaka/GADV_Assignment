@@ -12,6 +12,8 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D rb;
     private bool isGrounded;
 
+    private bool isFacingRight = true; // Track direction player is facing
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -23,6 +25,16 @@ public class PlayerMovement : MonoBehaviour
         float moveInput = Input.GetAxisRaw("Horizontal");
         rb.linearVelocity = new Vector2(moveInput * moveSpeed, rb.linearVelocity.y);
 
+        // Flip sprite depending on direction
+        if (moveInput > 0 && !isFacingRight)
+        {
+            Flip(); // If moving right but currently facing left, flip
+        }
+        else if (moveInput < 0 && isFacingRight)
+        {
+            Flip(); // If moving left but currently facing right, flip
+        }
+
         // Check if player is on the ground using OverlapCircle
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
 
@@ -31,6 +43,15 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
         }
+    }
+
+    // Flip the player sprite by inverting the X scale
+    void Flip()
+    {
+        isFacingRight = !isFacingRight;
+        Vector3 scale = transform.localScale;
+        scale.x *= -1;
+        transform.localScale = scale;
     }
 
     // Draw the ground check circle in the Scene view
