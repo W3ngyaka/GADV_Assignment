@@ -24,11 +24,11 @@ public class PlayerMovement : MonoBehaviour
         // Flip player when moving left right
         if (moveInput > 0)
         {
-            transform.localScale = Vector3.one;
+            transform.localScale = new Vector3(2, 2, 2);
         }
         else if (moveInput < 0)
         {
-            transform.localScale = new Vector3(-1, 1, 1);
+            transform.localScale = new Vector3(-2, 2, 2);
         }
 
 
@@ -46,11 +46,12 @@ public class PlayerMovement : MonoBehaviour
     {
         rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
         isGrounded = false;
+        anim.SetTrigger("jump");
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.layer == LayerMask.NameToLayer("Ground")) ;
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Ground"))
         { 
             isGrounded = true;
         }
