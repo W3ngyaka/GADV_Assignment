@@ -8,32 +8,32 @@ public class PlayerMovement : MonoBehaviour
     public Transform groundCheck;      // Empty object placed under the player
     public float groundCheckRadius = 0.2f; // Radius for detecting ground
     public LayerMask groundLayer;      // Layer for ground objects
-
-    private Rigidbody2D rb;
     private bool isGrounded;
 
-    private bool isFacingRight = true; // Track direction player is facing
-
+    private Rigidbody2D rb;
+    private Animator anim;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
     }
 
-    void Update()
+    private void Update()
     {
         // Horizontal movement
         float moveInput = Input.GetAxisRaw("Horizontal");
         rb.linearVelocity = new Vector2(moveInput * moveSpeed, rb.linearVelocity.y);
 
-        // Flip sprite depending on direction
-        if (moveInput > 0 && !isFacingRight)
+        // Flip player when moving left right
+        if (moveInput > 0)
         {
-            Flip(); // If moving right but currently facing left, flip
+            transform.localScale = Vector3.one;
         }
-        else if (moveInput < 0 && isFacingRight)
+        else if(moveInput < 0)
         {
-            Flip(); // If moving left but currently facing right, flip
+            transform.localScale = new Vector3(-1, 1, 1);
         }
+            
 
         // Check if player is on the ground using OverlapCircle
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
@@ -43,15 +43,6 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
         }
-    }
-
-    // Flip the player sprite by inverting the X scale
-    void Flip()
-    {
-        isFacingRight = !isFacingRight;
-        Vector3 scale = transform.localScale;
-        scale.x *= -1;
-        transform.localScale = scale;
     }
 
     // Draw the ground check circle in the Scene view
