@@ -44,6 +44,8 @@ public class PlayerMovement : MonoBehaviour
         // set animator parameters
         anim.SetBool("run", moveInput != 0);
         anim.SetBool("grounded", isGrounded());
+
+        print(onWall());
     }
 
     private bool isGrounded()
