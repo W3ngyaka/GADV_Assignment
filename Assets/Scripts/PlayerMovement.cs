@@ -5,9 +5,6 @@ public class PlayerMovement : MonoBehaviour
     public float moveSpeed = 5f;       // How fast the player moves left/right
     public float jumpForce = 10f;      // How high the player jumps
 
-    public Transform groundCheck;      // Empty object placed under the player
-    public float groundCheckRadius = 0.2f; // Radius for detecting ground
-    public LayerMask groundLayer;      // Layer for ground objects
     private bool isGrounded;
 
     private Rigidbody2D rb;
@@ -29,31 +26,34 @@ public class PlayerMovement : MonoBehaviour
         {
             transform.localScale = Vector3.one;
         }
-        else if(moveInput < 0)
+        else if (moveInput < 0)
         {
             transform.localScale = new Vector3(-1, 1, 1);
         }
-            
-        // Check if player is on the ground using OverlapCircle
-        isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
 
-        // Allow jumping only if grounded
+
         if (Input.GetKey(KeyCode.Space) && isGrounded)
         {
-            rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
+            Jump();
         }
 
         // set animator parameters
         anim.SetBool("run", moveInput != 0);
     }
 
-    // Draw the ground check circle in the Scene view
-    private void OnDrawGizmosSelected()
+    private void Jump()
     {
-        if (groundCheck != null)
-        {
-            Gizmos.color = Color.red;
-            Gizmos.DrawWireSphere(groundCheck.position, groundCheckRadius);
+        rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
+        isGrounded = false;
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Ground")) ;
+        { 
+            isGrounded = true;
         }
     }
 }
+
+   
