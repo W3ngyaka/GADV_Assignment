@@ -4,15 +4,19 @@ public class PlayerMovement : MonoBehaviour
 {
     public float moveSpeed = 5f;       // How fast the player moves left/right
     public float jumpForce = 10f;      // How high the player jumps
-
-    private bool isGrounded;
+    [SerializeField] private LayerMask groundLayer;
+    [SerializeField] private LayerMask wallLayer;
 
     private Rigidbody2D rb;
     private Animator anim;
+    private BoxCollider2D boxCollider;
+
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        boxCollider = GetComponent<BoxCollider2D>();
     }
 
     private void Update()
@@ -32,30 +36,33 @@ public class PlayerMovement : MonoBehaviour
         }
 
 
-        if (Input.GetKey(KeyCode.Space) && isGrounded)
+        if (Input.GetKey(KeyCode.Space) && isGrounded())
         {
             Jump();
         }
 
         // set animator parameters
         anim.SetBool("run", moveInput != 0);
-        anim.SetBool("grounded", isGrounded);
+        anim.SetBool("grounded", isGrounded());
+    }
+
+    private bool isGrounded()
+    {
+        RaycastHit2D raycastHit = Physics2D.BoxCast(boxCollider.bounds.center, boxCollider.bounds.size, 0, Vector2.down, 0.1f, groundLayer);
+        return raycastHit.collider != null;
+    }
+
+    private bool onWall()
+    {
+        RaycastHit2D raycastHit = Physics2D.BoxCast(boxCollider.bounds.center, boxCollider.bounds.size, 0, new Vector2(transform.localScale.x, 0), 0.1f, wallLayer);
+        return raycastHit.collider != null;
     }
 
     private void Jump()
     {
         rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
-        isGrounded = false;
         anim.SetTrigger("jump");
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.layer == LayerMask.NameToLayer("Ground"))
-        { 
-            isGrounded = true;
-        }
-    }
+    
 }
-
-   
