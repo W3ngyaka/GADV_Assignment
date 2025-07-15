@@ -34,7 +34,6 @@ public class PlayerMovement : MonoBehaviour
             transform.localScale = new Vector3(-1, 1, 1);
         }
             
-
         // Check if player is on the ground using OverlapCircle
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
 
@@ -43,6 +42,9 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
         }
+
+        // set animator parameters
+        anim.SetBool("run", moveInput != 0);
     }
 
     // Draw the ground check circle in the Scene view
