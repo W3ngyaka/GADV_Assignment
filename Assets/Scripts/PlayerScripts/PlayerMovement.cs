@@ -18,51 +18,64 @@ public class PlayerMovement : MonoBehaviour
     private bool isDodging = false;
     private float dodgeTimer = 0f;
     private float dodgeCooldownTimer = 0f;
+    private float moveInput;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         boxCollider = GetComponent<BoxCollider2D>();
-    }
+    } 
 
     void Update()
     {
-        // Update cooldown timer
-        if (dodgeCooldownTimer > 0)
-            dodgeCooldownTimer -= Time.deltaTime;
+        // Input only (non-physics logic)
+        moveInput = Input.GetAxisRaw("Horizontal");
+
+        // Handle sprite flip
+        if (moveInput > 0)
+            transform.localScale = new Vector3(2, 2, 2);
+        else if (moveInput < 0)
+            transform.localScale = new Vector3(-2, 2, 2);
+
+        // Handle jump input
+        if (Input.GetKeyDown(KeyCode.Space) && isGrounded())
+        {
+            Jump();
+        }
+
+        // Handle dodge input
+        if (Input.GetKeyDown(KeyCode.LeftShift) && dodgeCooldownTimer <= 0f && !isDodging)
+        {
+            StartDodge();
+        }
+
+        // Animator logic (not physics)
+        anim.SetBool("run", moveInput != 0 && !isDodging);
+        anim.SetBool("grounded", isGrounded());
+    }
+
+    void FixedUpdate()
+    {
+        // Update dodge cooldown
+        if (dodgeCooldownTimer > 0f)
+            dodgeCooldownTimer -= Time.fixedDeltaTime;
 
         if (isDodging)
         {
-            dodgeTimer -= Time.deltaTime;
+            dodgeTimer -= Time.fixedDeltaTime;
 
-            // End dodge
+            float direction = Mathf.Sign(transform.localScale.x);
+            rb.linearVelocity = new Vector2(direction * dodgeSpeed, rb.linearVelocity.y);
+
             if (dodgeTimer <= 0f)
+            {
                 isDodging = false;
+            }
         }
         else
         {
-            // Movement
-            float moveInput = Input.GetAxisRaw("Horizontal");
             rb.linearVelocity = new Vector2(moveInput * moveSpeed, rb.linearVelocity.y);
-
-            // Flip sprite
-            if (moveInput > 0)
-                transform.localScale = new Vector3(2, 2, 2);
-            else if (moveInput < 0)
-                transform.localScale = new Vector3(-2, 2, 2);
-
-            // Jump
-            if (Input.GetKey(KeyCode.Space) && isGrounded())
-                Jump();
-
-            // Dodge
-            if (Input.GetKeyDown(KeyCode.LeftShift) && dodgeCooldownTimer <= 0f)
-                StartDodge();
-
-            // Animator
-            anim.SetBool("run", moveInput != 0);
-            anim.SetBool("grounded", isGrounded());
         }
     }
 
@@ -72,9 +85,6 @@ public class PlayerMovement : MonoBehaviour
         dodgeTimer = dodgeDuration;
         dodgeCooldownTimer = dodgeCooldownTime;
         anim.SetTrigger("dodge");
-
-        float direction = Mathf.Sign(transform.localScale.x);
-        rb.linearVelocity = new Vector2(direction * dodgeSpeed, rb.linearVelocity.y);
     }
 
     private void Jump()
