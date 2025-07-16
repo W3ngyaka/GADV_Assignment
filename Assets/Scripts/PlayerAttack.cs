@@ -42,7 +42,6 @@ public class PlayerAttack : MonoBehaviour
                         break;
                     case 4:
                         anim.SetTrigger("attack4");
-                        comboStep = 0;
                         break;
                     default:
                         comboStep = 0;
@@ -58,5 +57,11 @@ public class PlayerAttack : MonoBehaviour
     public void EnableCombo()
     {
         canCombo = true;
+    }
+
+    public void ResetCombo()
+    { 
+        comboStep = 0;
+        canCombo = false;
     }
 }
