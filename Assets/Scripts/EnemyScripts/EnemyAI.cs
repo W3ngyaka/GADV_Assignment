@@ -6,7 +6,11 @@ public class EnemyAI : MonoBehaviour
     public Transform player;
     public float chaseRange = 5f;
     public float stopDistance = 1f;
-    public float verticalTolerance = 1f; // How far up/down the player can be and still be detected
+    public float attackRange = 1.2f;
+    public float verticalTolerance = 1f;
+    public float attackCooldown = 1f;
+
+    private float attackTimer = 0f;
 
     private Rigidbody2D rb;
     private Animator anim;
@@ -19,36 +23,38 @@ public class EnemyAI : MonoBehaviour
 
     void FixedUpdate()
     {
-        // Horizontal and vertical distances separately
         float horizontalDistance = Mathf.Abs(player.position.x - transform.position.x);
         float verticalDistance = Mathf.Abs(player.position.y - transform.position.y);
+        attackTimer -= Time.fixedDeltaTime;
 
         if (horizontalDistance <= chaseRange && verticalDistance <= verticalTolerance)
         {
             if (horizontalDistance > stopDistance)
             {
-                // Move toward player only on the X axis
+                // Move toward player
                 float directionX = Mathf.Sign(player.position.x - transform.position.x);
                 rb.linearVelocity = new Vector2(directionX * moveSpeed, rb.linearVelocity.y);
 
-                // Flip sprite once, only if facing wrong way
-                if (directionX > 0)
-                    transform.localScale = new Vector3(-3, 3, 3); // Face right
-                else
-                    transform.localScale = new Vector3(3, 3, 3);  // Face left
+                // Flip sprite
+                transform.localScale = new Vector3(directionX > 0 ? -3 : 3, 3, 3);
 
                 anim.SetBool("isMoving", true);
             }
             else
             {
-                // Stop when close enough
+                // Stop moving and attack if in attack range
                 rb.linearVelocity = new Vector2(0, rb.linearVelocity.y);
                 anim.SetBool("isMoving", false);
+
+                if (horizontalDistance <= attackRange && attackTimer <= 0f)
+                {
+                    anim.SetTrigger("attack");
+                    attackTimer = attackCooldown;
+                }
             }
         }
         else
         {
-            // Out of range
             rb.linearVelocity = new Vector2(0, rb.linearVelocity.y);
             anim.SetBool("isMoving", false);
         }
