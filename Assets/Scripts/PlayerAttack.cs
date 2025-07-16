@@ -23,7 +23,7 @@ public class PlayerAttack : MonoBehaviour
 
         // Handle attack input
         if (Input.GetMouseButtonDown(0))
-            {
+        {
             if (comboStep == 0 || canCombo)
             {
                 lastAttackTime = Time.time;
