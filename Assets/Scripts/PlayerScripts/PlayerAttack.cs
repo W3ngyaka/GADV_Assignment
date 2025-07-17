@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
@@ -7,6 +7,12 @@ public class PlayerAttack : MonoBehaviour
     private float lastAttackTime = 0f;
     public float comboResetTime = 1f;
     private bool canCombo = false;
+
+    [Header("Attack Settings")]
+    public Transform attackPoint;
+    public float attackRange = 0.7f;
+    public int attackDamage = 1;
+    public LayerMask enemyLayer;
 
     void Start()
     {
@@ -21,7 +27,6 @@ public class PlayerAttack : MonoBehaviour
             canCombo = false;
         }
 
-        // Handle attack input
         if (Input.GetMouseButtonDown(0))
         {
             if (comboStep == 0 || canCombo)
@@ -31,37 +36,35 @@ public class PlayerAttack : MonoBehaviour
 
                 switch (comboStep)
                 {
-                    case 1:
-                        anim.SetTrigger("attack1");
-                        break;
-                    case 2:
-                        anim.SetTrigger("attack2");
-                        break;
-                    case 3:
-                        anim.SetTrigger("attack3");
-                        break;
-                    case 4:
-                        anim.SetTrigger("attack4");
-                        break;
-                    default:
-                        comboStep = 0;
-                        break;
+                    case 1: anim.SetTrigger("attack1"); break;
+                    case 2: anim.SetTrigger("attack2"); break;
+                    case 3: anim.SetTrigger("attack3"); break;
+                    case 4: anim.SetTrigger("attack4"); break;
+                    default: comboStep = 0; break;
                 }
 
-                canCombo = false; // Reset combo window until animation allows it again
+                canCombo = false;
             }
         }
     }
 
-    // Called by animation event at the right time to allow chaining
-    public void EnableCombo()
+    public void EnableCombo() => canCombo = true;
+    public void ResetCombo() { comboStep = 0; canCombo = false; }
+
+    // 🔥 Called by Animation Event
+    public void DealDamage()
     {
-        canCombo = true;
+        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayer);
+        foreach (Collider2D enemy in hitEnemies)
+        {
+            enemy.GetComponent<EnemyHealth>()?.TakeDamage(attackDamage);
+        }
     }
 
-    public void ResetCombo()
-    { 
-        comboStep = 0;
-        canCombo = false;
+    void OnDrawGizmosSelected()
+    {
+        if (attackPoint == null) return;
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(attackPoint.position, attackRange);
     }
 }
