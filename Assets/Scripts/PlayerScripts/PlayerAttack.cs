@@ -51,7 +51,7 @@ public class PlayerAttack : MonoBehaviour
     public void EnableCombo() => canCombo = true;
     public void ResetCombo() { comboStep = 0; canCombo = false; }
 
-    // 🔥 Called by Animation Event
+    // Called by Animation Event
     public void DealDamage()
     {
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayer);
@@ -61,10 +61,9 @@ public class PlayerAttack : MonoBehaviour
         }
     }
 
-    void OnDrawGizmosSelected()
+    private void OnDrawGizmosSelected()
     {
-        if (attackPoint == null) return;
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(attackPoint.position, attackRange);
+        if (attackPoint != null)
+            Gizmos.DrawWireSphere(attackPoint.position, attackRange);
     }
 }

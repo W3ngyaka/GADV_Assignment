@@ -2,14 +2,16 @@ using UnityEngine;
 
 public class EnemyAI : MonoBehaviour
 {
+    [Header("AI Target Settings")]
     public float moveSpeed = 3f;
     public Transform player;
     public float chaseRange = 5f;
     public float stopDistance = 1f;
+
+    [Header("Attack Settings")]
     public float attackRange = 1.2f;
     public float verticalTolerance = 1f;
     public float attackCooldown = 1f;
-
     private float attackTimer = 0f;
 
     private Rigidbody2D rb;
@@ -59,4 +61,7 @@ public class EnemyAI : MonoBehaviour
             anim.SetBool("isMoving", false);
         }
     }
+
+
+    
 }

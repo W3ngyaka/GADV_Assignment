@@ -1,19 +1,23 @@
-﻿using UnityEngine;
+using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
 {
+
+    [Header("Health Settings")]
     public int maxHealth = 3;
     private int currentHealth;
 
-    private Animator anim;
     private Rigidbody2D rb;
+    private Animator anim;
 
-    private void Start()
+    void Start()
     {
         currentHealth = maxHealth;
-        anim = GetComponent<Animator>();
+        Debug.Log($"{gameObject.name} HP: {currentHealth}");
         rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
     }
+
 
     public void TakeDamage(int damage)
     {
@@ -32,6 +36,6 @@ public class EnemyHealth : MonoBehaviour
         rb.linearVelocity = Vector2.zero;
         rb.simulated = false; // Optional: stops further physics
         GetComponent<Collider2D>().enabled = false;
-        Destroy(gameObject, 3f); // Delay to let death animation play
+        Destroy(gameObject, 2f); // Delay to let death animation play
     }
 }
