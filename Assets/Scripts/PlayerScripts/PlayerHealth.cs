@@ -1,10 +1,9 @@
 using UnityEngine;
 
-public class EnemyHealth : MonoBehaviour
+public class PlayerHealth : MonoBehaviour
 {
-
     [Header("Health Settings")]
-    public int maxHealth = 1;
+    public int maxHealth = 3;
     private int currentHealth;
 
     private Rigidbody2D rb;

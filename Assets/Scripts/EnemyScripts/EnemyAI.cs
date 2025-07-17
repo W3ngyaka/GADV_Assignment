@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class EnemyAI : MonoBehaviour
 {
@@ -9,9 +9,13 @@ public class EnemyAI : MonoBehaviour
     public float stopDistance = 1f;
 
     [Header("Attack Settings")]
-    public float attackRange = 1.2f;
+    public Transform attackPoint;
+    public float attackRange = 0.7f;
+    public int attackDamage = 1;
+    public LayerMask playerLayer;
     public float verticalTolerance = 1f;
     public float attackCooldown = 1f;
+
     private float attackTimer = 0f;
 
     private Rigidbody2D rb;
@@ -25,6 +29,8 @@ public class EnemyAI : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (!player) return;
+
         float horizontalDistance = Mathf.Abs(player.position.x - transform.position.x);
         float verticalDistance = Mathf.Abs(player.position.y - transform.position.y);
         attackTimer -= Time.fixedDeltaTime;
@@ -33,18 +39,15 @@ public class EnemyAI : MonoBehaviour
         {
             if (horizontalDistance > stopDistance)
             {
-                // Move toward player
                 float directionX = Mathf.Sign(player.position.x - transform.position.x);
                 rb.linearVelocity = new Vector2(directionX * moveSpeed, rb.linearVelocity.y);
 
-                // Flip sprite
+                // Flip
                 transform.localScale = new Vector3(directionX > 0 ? -3 : 3, 3, 3);
-
                 anim.SetBool("isMoving", true);
             }
             else
             {
-                // Stop moving and attack if in attack range
                 rb.linearVelocity = new Vector2(0, rb.linearVelocity.y);
                 anim.SetBool("isMoving", false);
 
@@ -62,6 +65,22 @@ public class EnemyAI : MonoBehaviour
         }
     }
 
+    // Called by Animation Event
+    public void DealDamage()
+    {
+        Collider2D[] hitPlayers = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, playerLayer);
+        foreach (Collider2D player in hitPlayers)
+        {
+            player.GetComponent<PlayerHealth>()?.TakeDamage(attackDamage);
+        }
+    }
 
-    
+    void OnDrawGizmosSelected()
+    {
+        if (attackPoint != null)
+        {
+            Gizmos.color = Color.blue;
+            Gizmos.DrawWireSphere(attackPoint.position, attackRange);
+        }
+    }
 }
