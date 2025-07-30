@@ -4,7 +4,7 @@ public class EnemyAI : MonoBehaviour
 {
     [Header("AI Target Settings")]
     public float moveSpeed = 3f;
-    public Transform player;
+    public GameObject player; // Changed from Transform to GameObject
     public float chaseRange = 5f;
     public float stopDistance = 1f;
 
@@ -31,15 +31,17 @@ public class EnemyAI : MonoBehaviour
     {
         if (!player) return;
 
-        float horizontalDistance = Mathf.Abs(player.position.x - transform.position.x);
-        float verticalDistance = Mathf.Abs(player.position.y - transform.position.y);
+        Vector3 playerPos = player.transform.position;
+
+        float horizontalDistance = Mathf.Abs(playerPos.x - transform.position.x);
+        float verticalDistance = Mathf.Abs(playerPos.y - transform.position.y);
         attackTimer -= Time.fixedDeltaTime;
 
         if (horizontalDistance <= chaseRange && verticalDistance <= verticalTolerance)
         {
             if (horizontalDistance > stopDistance)
             {
-                float directionX = Mathf.Sign(player.position.x - transform.position.x);
+                float directionX = Mathf.Sign(playerPos.x - transform.position.x);
                 rb.linearVelocity = new Vector2(directionX * moveSpeed, rb.linearVelocity.y);
 
                 // Flip
