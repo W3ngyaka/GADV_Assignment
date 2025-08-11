@@ -1,0 +1,1040 @@
+fileFormatVersion: 2
+guid: fe454536b72bfe24ab4e97aed5776de5
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -9101359793410578698
+    second: wooden-gold-buttons-ui-game_0
+  - first:
+      213: 6651617003957989921
+    second: wooden-gold-buttons-ui-game_1
+  - first:
+      213: 8255781669047936650
+    second: wooden-gold-buttons-ui-game_2
+  - first:
+      213: -2122708353590619967
+    second: wooden-gold-buttons-ui-game_3
+  - first:
+      213: 3553011631693736035
+    second: wooden-gold-buttons-ui-game_4
+  - first:
+      213: 7610985988106462762
+    second: wooden-gold-buttons-ui-game_5
+  - first:
+      213: -4409939878338849088
+    second: wooden-gold-buttons-ui-game_6
+  - first:
+      213: 8094966633836544679
+    second: wooden-gold-buttons-ui-game_7
+  - first:
+      213: 5703513527548049033
+    second: wooden-gold-buttons-ui-game_8
+  - first:
+      213: 4231843700728343853
+    second: wooden-gold-buttons-ui-game_9
+  - first:
+      213: -8455485957446284917
+    second: wooden-gold-buttons-ui-game_10
+  - first:
+      213: -5151622302952377031
+    second: wooden-gold-buttons-ui-game_11
+  - first:
+      213: 3578474295538649929
+    second: wooden-gold-buttons-ui-game_12
+  - first:
+      213: -8607598804559077244
+    second: wooden-gold-buttons-ui-game_13
+  - first:
+      213: -8637341406043303935
+    second: wooden-gold-buttons-ui-game_14
+  - first:
+      213: 2319837586023765003
+    second: wooden-gold-buttons-ui-game_15
+  - first:
+      213: 142112855601740514
+    second: wooden-gold-buttons-ui-game_16
+  - first:
+      213: 2217164545824382229
+    second: wooden-gold-buttons-ui-game_17
+  - first:
+      213: 783840449714414191
+    second: wooden-gold-buttons-ui-game_18
+  - first:
+      213: -7769901224037788448
+    second: wooden-gold-buttons-ui-game_19
+  - first:
+      213: -1163251668006607332
+    second: wooden-gold-buttons-ui-game_20
+  - first:
+      213: 3295291902162062654
+    second: wooden-gold-buttons-ui-game_21
+  - first:
+      213: -5836390812711774245
+    second: wooden-gold-buttons-ui-game_22
+  - first:
+      213: -1024176825764289679
+    second: wooden-gold-buttons-ui-game_23
+  - first:
+      213: -6359590537060916249
+    second: wooden-gold-buttons-ui-game_24
+  - first:
+      213: -6600703170026450180
+    second: wooden-gold-buttons-ui-game_25
+  - first:
+      213: -8391580109324099031
+    second: wooden-gold-buttons-ui-game_26
+  - first:
+      213: 7788257506292133287
+    second: wooden-gold-buttons-ui-game_27
+  - first:
+      213: -8275909984265458032
+    second: wooden-gold-buttons-ui-game_28
+  - first:
+      213: 8470107182641460655
+    second: wooden-gold-buttons-ui-game_29
+  - first:
+      213: 2346828489545040756
+    second: wooden-gold-buttons-ui-game_30
+  - first:
+      213: 1800958627830775405
+    second: wooden-gold-buttons-ui-game_31
+  - first:
+      213: -8367358978355428195
+    second: wooden-gold-buttons-ui-game_32
+  - first:
+      213: 4250913431843265964
+    second: wooden-gold-buttons-ui-game_33
+  - first:
+      213: -6983961183259906031
+    second: wooden-gold-buttons-ui-game_34
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: wooden-gold-buttons-ui-game_0
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 1748
+        width: 802
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f66dbc2d7971b180800000000000000
+      internalID: -9101359793410578698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wooden-gold-buttons-ui-game_1
+      rect:
+        serializedVersion: 2
+        x: 955
+        y: 1166
+        width: 948
+        height: 700
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1223dde5c6a4f4c50800000000000000
+      internalID: 6651617003957989921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wooden-gold-buttons-ui-game_2
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 1631
+        width: 802
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a86a8cedfad629270800000000000000
+      internalID: 8255781669047936650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wooden-gold-buttons-ui-game_3
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 1515
+        width: 802
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c01a7ebfff9a82e0800000000000000
+      internalID: -2122708353590619967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wooden-gold-buttons-ui-game_4
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 1398
+        width: 801
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 368afed1145de4130800000000000000
+      internalID: 3553011631693736035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wooden-gold-buttons-ui-game_5
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 1281
+        width: 801
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a26af837e67af9960800000000000000
+      internalID: 7610985988106462762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wooden-gold-buttons-ui-game_6
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 1164
+        width: 801
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c698c6ab0fbcc2c0800000000000000
+      internalID: -4409939878338849088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wooden-gold-buttons-ui-game_7
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 889
+        width: 620
+        height: 202
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a28776b349175070800000000000000
+      internalID: 8094966633836544679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wooden-gold-buttons-ui-game_8
+      rect:
+        serializedVersion: 2
+        x: 755
+        y: 889
+        width: 547
+        height: 202
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 986f225b553f62f40800000000000000
+      internalID: 5703513527548049033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wooden-gold-buttons-ui-game_9
+      rect:
+        serializedVersion: 2
+        x: 1355
+        y: 889
+        width: 546
+        height: 202
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d2d23eeac678aba30800000000000000
+      internalID: 4231843700728343853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wooden-gold-buttons-ui-game_10
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 631
+        width: 173
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b894c1f125418aa80800000000000000
+      internalID: -8455485957446284917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wooden-gold-buttons-ui-game_11
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 631
+        width: 173
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9353b875fc2c188b0800000000000000
+      internalID: -5151622302952377031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wooden-gold-buttons-ui-game_12
+      rect:
+        serializedVersion: 2
+        x: 506
+        y: 631
+        width: 172
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94b8277896b49a130800000000000000
+      internalID: 3578474295538649929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wooden-gold-buttons-ui-game_13
+      rect:
+        serializedVersion: 2
+        x: 707
+        y: 631
+        width: 173
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 480ed250e7aab8880800000000000000
+      internalID: -8607598804559077244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wooden-gold-buttons-ui-game_14
+      rect:
+        serializedVersion: 2
+        x: 908
+        y: 631
+        width: 173
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1001409f0cff12880800000000000000
+      internalID: -8637341406043303935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wooden-gold-buttons-ui-game_15
+      rect:
+        serializedVersion: 2
+        x: 1110
+        y: 631
+        width: 172
+        height: 178
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b04db835ef7b13020800000000000000
+      internalID: 2319837586023765003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wooden-gold-buttons-ui-game_16
+      rect:
+        serializedVersion: 2
+        x: 1311
+        y: 631
+        width: 173
+        height: 178
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ea7824a3e2e8f100800000000000000
+      internalID: 142112855601740514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wooden-gold-buttons-ui-game_17
+      rect:
+        serializedVersion: 2
+        x: 1512
+        y: 631
+        width: 173
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 51dd37a4863f4ce10800000000000000
+      internalID: 2217164545824382229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wooden-gold-buttons-ui-game_18
+      rect:
+        serializedVersion: 2
+        x: 1714
+        y: 631
+        width: 173
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f626fcd6cb2c0ea00800000000000000
+      internalID: 783840449714414191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wooden-gold-buttons-ui-game_19
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 377
+        width: 183
+        height: 181
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e4da51e004cb2490800000000000000
+      internalID: -7769901224037788448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wooden-gold-buttons-ui-game_20
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 377
+        width: 183
+        height: 181
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c16e51865cc4bdfe0800000000000000
+      internalID: -1163251668006607332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wooden-gold-buttons-ui-game_21
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 377
+        width: 183
+        height: 181
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e3d479b968a3bbd20800000000000000
+      internalID: 3295291902162062654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wooden-gold-buttons-ui-game_22
+      rect:
+        serializedVersion: 2
+        x: 705
+        y: 377
+        width: 183
+        height: 181
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd716f57a79f00fa0800000000000000
+      internalID: -5836390812711774245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wooden-gold-buttons-ui-game_23
+      rect:
+        serializedVersion: 2
+        x: 906
+        y: 377
+        width: 182
+        height: 181
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 173e1217a9469c1f0800000000000000
+      internalID: -1024176825764289679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wooden-gold-buttons-ui-game_24
+      rect:
+        serializedVersion: 2
+        x: 1107
+        y: 377
+        width: 182
+        height: 181
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e36c81e9123eb7a0800000000000000
+      internalID: -6359590537060916249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wooden-gold-buttons-ui-game_25
+      rect:
+        serializedVersion: 2
+        x: 1307
+        y: 377
+        width: 183
+        height: 181
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf257ca50779564a0800000000000000
+      internalID: -6600703170026450180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wooden-gold-buttons-ui-game_26
+      rect:
+        serializedVersion: 2
+        x: 1508
+        y: 377
+        width: 183
+        height: 181
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 922e08fd95e1b8b80800000000000000
+      internalID: -8391580109324099031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wooden-gold-buttons-ui-game_27
+      rect:
+        serializedVersion: 2
+        x: 1709
+        y: 377
+        width: 183
+        height: 181
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7adefc120f2751c60800000000000000
+      internalID: 7788257506292133287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wooden-gold-buttons-ui-game_28
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 127
+        width: 209
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09eafba87bf062d80800000000000000
+      internalID: -8275909984265458032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wooden-gold-buttons-ui-game_29
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 127
+        width: 209
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa534d62b9ddb8570800000000000000
+      internalID: 8470107182641460655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wooden-gold-buttons-ui-game_30
+      rect:
+        serializedVersion: 2
+        x: 572
+        y: 119
+        width: 157
+        height: 187
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4734914c31c919020800000000000000
+      internalID: 2346828489545040756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wooden-gold-buttons-ui-game_31
+      rect:
+        serializedVersion: 2
+        x: 749
+        y: 119
+        width: 164
+        height: 187
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6e3703845a4ef810800000000000000
+      internalID: 1800958627830775405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wooden-gold-buttons-ui-game_32
+      rect:
+        serializedVersion: 2
+        x: 934
+        y: 131
+        width: 159
+        height: 164
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d9403f2675b21eb80800000000000000
+      internalID: -8367358978355428195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wooden-gold-buttons-ui-game_33
+      rect:
+        serializedVersion: 2
+        x: 1107
+        y: 137
+        width: 159
+        height: 170
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cad54f37e374efa30800000000000000
+      internalID: 4250913431843265964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wooden-gold-buttons-ui-game_34
+      rect:
+        serializedVersion: 2
+        x: 1293
+        y: 128
+        width: 582
+        height: 174
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1103da27e4cf31f90800000000000000
+      internalID: -6983961183259906031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      wooden-gold-buttons-ui-game_0: -9101359793410578698
+      wooden-gold-buttons-ui-game_1: 6651617003957989921
+      wooden-gold-buttons-ui-game_10: -8455485957446284917
+      wooden-gold-buttons-ui-game_11: -5151622302952377031
+      wooden-gold-buttons-ui-game_12: 3578474295538649929
+      wooden-gold-buttons-ui-game_13: -8607598804559077244
+      wooden-gold-buttons-ui-game_14: -8637341406043303935
+      wooden-gold-buttons-ui-game_15: 2319837586023765003
+      wooden-gold-buttons-ui-game_16: 142112855601740514
+      wooden-gold-buttons-ui-game_17: 2217164545824382229
+      wooden-gold-buttons-ui-game_18: 783840449714414191
+      wooden-gold-buttons-ui-game_19: -7769901224037788448
+      wooden-gold-buttons-ui-game_2: 8255781669047936650
+      wooden-gold-buttons-ui-game_20: -1163251668006607332
+      wooden-gold-buttons-ui-game_21: 3295291902162062654
+      wooden-gold-buttons-ui-game_22: -5836390812711774245
+      wooden-gold-buttons-ui-game_23: -1024176825764289679
+      wooden-gold-buttons-ui-game_24: -6359590537060916249
+      wooden-gold-buttons-ui-game_25: -6600703170026450180
+      wooden-gold-buttons-ui-game_26: -8391580109324099031
+      wooden-gold-buttons-ui-game_27: 7788257506292133287
+      wooden-gold-buttons-ui-game_28: -8275909984265458032
+      wooden-gold-buttons-ui-game_29: 8470107182641460655
+      wooden-gold-buttons-ui-game_3: -2122708353590619967
+      wooden-gold-buttons-ui-game_30: 2346828489545040756
+      wooden-gold-buttons-ui-game_31: 1800958627830775405
+      wooden-gold-buttons-ui-game_32: -8367358978355428195
+      wooden-gold-buttons-ui-game_33: 4250913431843265964
+      wooden-gold-buttons-ui-game_34: -6983961183259906031
+      wooden-gold-buttons-ui-game_4: 3553011631693736035
+      wooden-gold-buttons-ui-game_5: 7610985988106462762
+      wooden-gold-buttons-ui-game_6: -4409939878338849088
+      wooden-gold-buttons-ui-game_7: 8094966633836544679
+      wooden-gold-buttons-ui-game_8: 5703513527548049033
+      wooden-gold-buttons-ui-game_9: 4231843700728343853
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
