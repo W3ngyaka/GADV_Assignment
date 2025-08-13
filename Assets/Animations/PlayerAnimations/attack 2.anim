@@ -22,15 +22,15 @@ AnimationClip:
     curve:
     - time: 0
       value: {fileID: -8345753331616478382, guid: aa94595283582d04db58491c84ab1435, type: 3}
-    - time: 0.11666667
+    - time: 0.1
       value: {fileID: -5515574048984974227, guid: aa94595283582d04db58491c84ab1435, type: 3}
-    - time: 0.23333333
+    - time: 0.2
       value: {fileID: -3878741669849815595, guid: aa94595283582d04db58491c84ab1435, type: 3}
-    - time: 0.35
+    - time: 0.3
       value: {fileID: -777060946598943158, guid: aa94595283582d04db58491c84ab1435, type: 3}
-    - time: 0.46666667
+    - time: 0.4
       value: {fileID: -4728083257135438555, guid: aa94595283582d04db58491c84ab1435, type: 3}
-    - time: 0.5833333
+    - time: 0.5
       value: {fileID: -60248966097534883, guid: aa94595283582d04db58491c84ab1435, type: 3}
     attribute: m_Sprite
     path: 
@@ -65,7 +65,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.59999996
+    m_StopTime: 0.51666665
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -85,14 +85,14 @@ AnimationClip:
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
   m_Events:
-  - time: 0.23333333
+  - time: 0.2
     functionName: DealDamage
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 0.5833333
+  - time: 0.5
     functionName: EnableCombo
     data: 
     objectReferenceParameter: {fileID: 0}

@@ -1,9 +1,11 @@
 using UnityEngine;
+using UnityEngine.UI; // Add this for UI access
 
 public class PlayerHealth : MonoBehaviour
 {
     [Header("Health Settings")]
     public int maxHealth = 3;
+    public Slider healthBar; 
     private int currentHealth;
 
     private Rigidbody2D rb;
@@ -12,16 +14,26 @@ public class PlayerHealth : MonoBehaviour
     void Start()
     {
         currentHealth = maxHealth;
-        Debug.Log($"{gameObject.name} HP: {currentHealth}");
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
-    }
 
+        // Initialize health bar
+        if (healthBar != null)
+        {
+            healthBar.maxValue = maxHealth;
+            healthBar.value = currentHealth;
+        }
+    }
 
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
-        Debug.Log($"{gameObject.name} HP: {currentHealth}"); // Print current HP
+
+        // Update health bar
+        if (healthBar != null)
+        {
+            healthBar.value = currentHealth;
+        }
 
         if (currentHealth <= 0)
         {
@@ -35,10 +47,15 @@ public class PlayerHealth : MonoBehaviour
 
     private void Die()
     {
+        if (healthBar != null)
+        {
+            healthBar.gameObject.SetActive(false); // Hide health bar on death
+        }
+
         anim.SetTrigger("die");
         rb.linearVelocity = Vector2.zero;
-        rb.simulated = false; // Optional: stops further physics
+        rb.simulated = false;
         GetComponent<Collider2D>().enabled = false;
-        Destroy(gameObject, 1f); // Delay to let death animation play
+        Destroy(gameObject, 1f);
     }
 }

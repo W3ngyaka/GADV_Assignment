@@ -4,7 +4,7 @@ public class EnemyAI : MonoBehaviour
 {
     [Header("AI Target Settings")]
     public float moveSpeed = 3f;
-    public GameObject player; 
+    [SerializeField] private GameObject player; // Made private with serialized field
     public float chaseRange = 5f;
     public float stopDistance = 1f;
 
@@ -17,7 +17,6 @@ public class EnemyAI : MonoBehaviour
     public float attackCooldown = 1f;
 
     private float attackTimer = 0f;
-
     private Rigidbody2D rb;
     private Animator anim;
 
@@ -25,6 +24,16 @@ public class EnemyAI : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+
+        // Auto-assign player if not set in inspector
+        if (player == null)
+        {
+            player = GameObject.FindWithTag("Player");
+            if (player == null)
+            {
+                Debug.LogWarning("No GameObject with 'Player' tag found!", this);
+            }
+        }
     }
 
     void FixedUpdate()
@@ -32,7 +41,6 @@ public class EnemyAI : MonoBehaviour
         if (!player) return;
 
         Vector3 playerPos = player.transform.position;
-
         float horizontalDistance = Mathf.Abs(playerPos.x - transform.position.x);
         float verticalDistance = Mathf.Abs(playerPos.y - transform.position.y);
         attackTimer -= Time.fixedDeltaTime;
@@ -84,5 +92,11 @@ public class EnemyAI : MonoBehaviour
             Gizmos.color = Color.blue;
             Gizmos.DrawWireSphere(attackPoint.position, attackRange);
         }
+    }
+
+    // Public method to assign player (for spawner)
+    public void SetPlayer(GameObject playerObject)
+    {
+        player = playerObject;
     }
 }
