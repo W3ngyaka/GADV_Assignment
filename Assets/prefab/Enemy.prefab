@@ -112,7 +112,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 547910251586419615, guid: 368e50d4a10a4354986f60ca935847f6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -135,8 +135,8 @@ Rigidbody2D:
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
+  m_UseAutoMass: 1
+  m_Mass: 2.1168
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_GravityScale: 2
@@ -255,9 +255,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b0988e8ffc76fd4da3b3019e1b7b6a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 1
+  maxHealth: 3
   alphabetDropPrefabs:
   - {fileID: 8604332238200646719, guid: 69bd6b812e5d3034695d3d84c9fb72b1, type: 3}
-  - {fileID: 8604332238200646719, guid: 78fee2b5ad16e2144912d9df67962991, type: 3}
-  - {fileID: 8604332238200646719, guid: 3fe38dac198ace94084f113ed458b7a2, type: 3}
-  - {fileID: 8604332238200646719, guid: a3cbd25464822a742bcb9b91344524e1, type: 3}
+  - {fileID: 8604332238200646719, guid: 7d2d3f4db70903646982fc0ea4947231, type: 3}
+  - {fileID: 8604332238200646719, guid: 8a7979c0a9da39b43993ce3d0319e1be, type: 3}
+  - {fileID: 8604332238200646719, guid: df0b7605888dece4389f6c7cc70679b3, type: 3}
+  - {fileID: 8604332238200646719, guid: 917187ea98fcda646a224a786dc3075d, type: 3}
+  - {fileID: 8604332238200646719, guid: aaf1af3c5e61abe4fade68a4d1259e42, type: 3}
+  - {fileID: 8604332238200646719, guid: 54e1fe761b98ad744a38761abd6e8590, type: 3}
+  - {fileID: 8604332238200646719, guid: 719667d66970c1a4bafa3391bbcb1a48, type: 3}
+  - {fileID: 8604332238200646719, guid: 1380a915bcb906d43a365f5dd078d11a, type: 3}

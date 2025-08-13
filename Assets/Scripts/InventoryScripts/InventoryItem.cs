@@ -7,7 +7,11 @@ using UnityEngine.EventSystems;
 public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
     public Image image;
+    public char letter;
+
     [HideInInspector] public Transform parentAfterDrag;
+
+    private CraftingArea lastCraftingArea;
 
     public void OnBeginDrag(PointerEventData eventData)
     {
@@ -16,19 +20,39 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         transform.SetParent(transform.root);
         transform.SetAsLastSibling();
         image.raycastTarget = false;
+
+        lastCraftingArea = parentAfterDrag.GetComponent<CraftingArea>();
     }
 
     public void OnDrag(PointerEventData eventData)
     {
         Debug.Log("Dragging");
         transform.position = Input.mousePosition;
+
+        
     }
 
     public void OnEndDrag(PointerEventData eventData)
     {
         Debug.Log("End drag");
-        transform.SetParent(parentAfterDrag);
         image.raycastTarget = true;
+
+        if (transform.parent == transform.root)
+        {
+            ReturnToParent();
+        }
+
+        if (lastCraftingArea != null && parentAfterDrag != lastCraftingArea.transform)
+        {
+            lastCraftingArea.RemoveLetter(letter);
+        }
+
+    }
+
+    private void ReturnToParent()
+    {
+        transform.SetParent(parentAfterDrag);
+        transform.localPosition = Vector3.zero; // Snap back to slot center
     }
 }
 

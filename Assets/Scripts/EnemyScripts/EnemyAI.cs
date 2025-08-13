@@ -4,7 +4,7 @@ public class EnemyAI : MonoBehaviour
 {
     [Header("AI Target Settings")]
     public float moveSpeed = 3f;
-    public GameObject player; // Changed from Transform to GameObject
+    public GameObject player; 
     public float chaseRange = 5f;
     public float stopDistance = 1f;
 

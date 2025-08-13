@@ -30,6 +30,10 @@ public class EnemyHealth : MonoBehaviour
         {
             Die();
         }
+        else
+        {
+            anim.SetTrigger("hurt");
+        }
     }
 
     private void Die()
@@ -43,7 +47,7 @@ public class EnemyHealth : MonoBehaviour
 
     private IEnumerator DelayedDeath()
     {
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(1.0f);
 
         if (alphabetDropPrefabs != null && alphabetDropPrefabs.Length > 0)
         {

@@ -27,6 +27,10 @@ public class PlayerHealth : MonoBehaviour
         {
             Die();
         }
+        else
+        {
+            anim.SetTrigger("hurt");
+        }
     }
 
     private void Die()
