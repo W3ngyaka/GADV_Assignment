@@ -53,6 +53,7 @@ public class PlayerMovement : MonoBehaviour
         // Animator logic (not physics)
         anim.SetBool("run", moveInput != 0 && !isDodging);
         anim.SetBool("grounded", isGrounded());
+        anim.SetBool("fall", IsFalling());
     }
 
     void FixedUpdate()
@@ -106,5 +107,9 @@ public class PlayerMovement : MonoBehaviour
         return raycastHit.collider != null;
     }
 
-    
+    private bool IsFalling()
+    {
+        // Returns true if player is moving downward and not grounded
+        return rb.linearVelocity.y < -0.1f && !isGrounded();
+    }
 }
