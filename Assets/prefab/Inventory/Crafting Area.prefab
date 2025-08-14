@@ -93,6 +93,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: fa257fe4aa9ee224cab21ad00057dc57, type: 2}
   - {fileID: 11400000, guid: fa25d294699b7db44860169514b68b7d, type: 2}
   - {fileID: 11400000, guid: 17e7dcab48f9b9446a8c15302add8af7, type: 2}
+  - {fileID: 11400000, guid: 9867aa36bf8a34f488ef8604eab00a58, type: 2}
   currentLetters: 
   spawnPoint: {fileID: 0}
 --- !u!114 &6656080608743701290
@@ -115,7 +116,7 @@ MonoBehaviour:
   m_ChildAlignment: 4
   m_StartCorner: 0
   m_StartAxis: 0
-  m_CellSize: {x: 30, y: 35}
+  m_CellSize: {x: 60, y: 60}
   m_Spacing: {x: 3, y: 0}
   m_Constraint: 2
   m_ConstraintCount: 1

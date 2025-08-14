@@ -14,7 +14,7 @@ TagManager:
   - Wall
   - Enemy
   - Player
-  - 
+  - Background
   - 
   - 
   - 
@@ -40,6 +40,33 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Sky
+    uniqueID: 221410805
+    locked: 0
+  - name: Blue Cloud
+    uniqueID: 2661694425
+    locked: 0
+  - name: Purple Cloud
+    uniqueID: 2755106203
+    locked: 0
+  - name: Forest
+    uniqueID: 128424907
+    locked: 0
+  - name: Ground
+    uniqueID: 3808020737
+    locked: 0
+  - name: Others
+    uniqueID: 240522159
+    locked: 0
+  - name: Letters
+    uniqueID: 3312785023
+    locked: 0
+  - name: Enemy
+    uniqueID: 499631019
+    locked: 0
+  - name: Player
+    uniqueID: 2042336187
     locked: 0
   m_RenderingLayers:
   - Default
