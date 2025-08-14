@@ -26,7 +26,7 @@ public class PlayerStats : MonoBehaviour
     // === Effect Implementation ===
     public void Heal(float amount)
     {
-        health?.TakeDamage(-Mathf.Abs(amount)); // Negative damage = healing
+        health?.TakeDamage(-Mathf.RoundToInt(amount)); // Negative damage = healing
     }
 
     public void ApplyDamageBoost(float multiplier, float duration)

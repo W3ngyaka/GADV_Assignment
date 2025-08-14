@@ -111,7 +111,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 499631019
-  m_SortingLayer: 7
+  m_SortingLayer: 8
   m_SortingOrder: 0
   m_Sprite: {fileID: 547910251586419615, guid: 368e50d4a10a4354986f60ca935847f6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -237,7 +237,7 @@ MonoBehaviour:
   stopDistance: 1
   attackPoint: {fileID: 3066320504728131978}
   attackRange: 1.2
-  attackDamage: 1
+  attackDamage: 10
   playerLayer:
     serializedVersion: 2
     m_Bits: 256
@@ -255,7 +255,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b0988e8ffc76fd4da3b3019e1b7b6a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 3
+  maxHealth: 10
   alphabetDropPrefabs:
   - {fileID: 8604332238200646719, guid: 69bd6b812e5d3034695d3d84c9fb72b1, type: 3}
   - {fileID: 8604332238200646719, guid: 7d2d3f4db70903646982fc0ea4947231, type: 3}

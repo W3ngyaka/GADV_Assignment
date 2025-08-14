@@ -107,13 +107,19 @@ public class CraftingArea : MonoBehaviour, IDropHandler
 
     private void AddClickHandler(GameObject craftedItem)
     {
+        // Ensure the item has a collider
         if (craftedItem.GetComponent<Collider>() == null)
         {
             craftedItem.AddComponent<BoxCollider>();
         }
 
+        // Add or get EventTrigger
         EventTrigger trigger = craftedItem.GetComponent<EventTrigger>() ?? craftedItem.AddComponent<EventTrigger>();
 
+        // Clear existing triggers to avoid duplicates
+        trigger.triggers.Clear();
+
+        // Add new click handler
         EventTrigger.Entry entry = new EventTrigger.Entry
         {
             eventID = EventTriggerType.PointerClick
@@ -124,12 +130,24 @@ public class CraftingArea : MonoBehaviour, IDropHandler
 
     private void OnCraftedItemClick(GameObject craftedItem)
     {
-        Destroy(craftedItem);
+        // Get the ItemUse component and execute effect before destruction
+        ItemUse itemUse = craftedItem.GetComponent<ItemUse>();
+        if (itemUse != null)
+        {
+            // Use the item on the player before cleaning up
+            itemUse.Use(GameObject.FindGameObjectWithTag("Player")); // Or your player reference
+        }
+
+        // Clean up letters and crafted item
         foreach (Transform child in transform)
         {
             Destroy(child.gameObject);
         }
+
+        Destroy(craftedItem);
         currentLetters.Clear();
-        Debug.Log("Letters cleared after clicking the crafted item!");
+        _lastCraftedItem = null;
+
+        Debug.Log("Item used and letters cleared!");
     }
 }

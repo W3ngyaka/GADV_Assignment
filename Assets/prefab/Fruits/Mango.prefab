@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6016868598170194756}
   - component: {fileID: 2271922794799449459}
   - component: {fileID: 8593069426647966594}
+  - component: {fileID: -4124516274008372945}
   m_Layer: 5
   m_Name: Mango
   m_TagString: Untagged
@@ -35,7 +36,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 8.863281, y: 31.581451}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 809, y: 802}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2271922794799449459
 CanvasRenderer:
@@ -75,3 +76,16 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &-4124516274008372945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7665536246701091865}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3ff78bd3975add489eeb8ccee16e74e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effect: {fileID: 11400000, guid: e99f8ff25746ec742ba30144651682a3, type: 2}
