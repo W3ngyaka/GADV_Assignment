@@ -1,11 +1,14 @@
 using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
+
 
 public class EnemyHealth : MonoBehaviour
 {
     [Header("Health Settings")]
     public int maxHealth = 1;
     private int currentHealth;
+    private Slider healthBar;
 
     private Rigidbody2D rb;
     private Animator anim;
@@ -19,6 +22,15 @@ public class EnemyHealth : MonoBehaviour
         Debug.Log($"{gameObject.name} HP: {currentHealth}");
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+
+        healthBar = GetComponentInChildren<Slider>(true);
+
+        if (healthBar != null)
+        {
+            healthBar.gameObject.SetActive(true);
+            healthBar.maxValue = maxHealth;
+            healthBar.value = currentHealth;
+        }
     }
 
     public void TakeDamage(int damage)
@@ -26,11 +38,16 @@ public class EnemyHealth : MonoBehaviour
         currentHealth -= damage;
         Debug.Log($"{gameObject.name} HP: {currentHealth}");
 
+        if (healthBar != null)
+        {
+            healthBar.value = currentHealth;
+        }
+
         if (currentHealth <= 0)
         {
             Die();
         }
-        else
+        else if (damage > 0)
         {
             anim.SetTrigger("hurt");
         }

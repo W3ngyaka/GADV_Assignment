@@ -28,23 +28,23 @@ public class PlayerHealth : MonoBehaviour
     public void TakeDamage(int damage)
     {
 
-            currentHealth -= damage;
+        currentHealth -= damage;
 
-            // Update health bar
-            if (healthBar != null)
-            {
-                healthBar.value = currentHealth;
-            }
-
-            if (currentHealth <= 0)
-            {
-                Die();
-            }
-            else if (damage > 0) {
-            {
-                anim.SetTrigger("hurt");
-            }
+        // Update health bar
+        if (healthBar != null)
+        {
+            healthBar.value = currentHealth;
         }
+
+        if (currentHealth <= 0)
+        {
+            Die();
+        }
+        else if (damage > 0) 
+        {
+            anim.SetTrigger("hurt");
+        }
+        
     }
 
     private void Die()

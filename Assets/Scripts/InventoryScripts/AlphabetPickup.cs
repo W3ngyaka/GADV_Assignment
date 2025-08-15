@@ -3,6 +3,7 @@ using UnityEngine;
 public class AlphabetPickup : MonoBehaviour
 {
     public char letter = 'A'; // Assign in prefab
+    public AudioClip pickupSound; // Assign audio clip in Inspector
     private Sprite sprite; // Automatically use sprite from Image
 
     private void Start()
@@ -20,6 +21,8 @@ public class AlphabetPickup : MonoBehaviour
                 inv.AddLetter(letter, sprite);
             }
 
+            // Play sound at the position of the pickup (no AudioSource needed)
+            AudioSource.PlayClipAtPoint(pickupSound, transform.position);
             Destroy(gameObject);
         }
     }

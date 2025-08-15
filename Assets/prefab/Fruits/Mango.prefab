@@ -89,3 +89,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effect: {fileID: 11400000, guid: e99f8ff25746ec742ba30144651682a3, type: 2}
+  useSound: {fileID: 8300000, guid: 4b8dee1d5c14fe94d808b44c9b6d7beb, type: 3}
+  volume: 2

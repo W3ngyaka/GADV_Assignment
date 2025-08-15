@@ -1,2 +1,15 @@
 fileFormatVersion: 2
 guid: ba0ee68c2f8a4c14dbac8315e70aa6b3
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - healSound: {fileID: 8300000, guid: fcbadfce232c40944a9541863c8b07f7, type: 3}
+  - damageSound: {fileID: 8300000, guid: b82c11f0f8e12c04eb8fa7a9bfc6cb5a, type: 3}
+  - speedSound: {fileID: 8300000, guid: 4b8dee1d5c14fe94d808b44c9b6d7beb, type: 3}
+  - regenSound: {fileID: 8300000, guid: e59ee238e0a474440bbd2c9c608aa1af, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
