@@ -2,27 +2,47 @@ using UnityEngine;
 
 public class UIManager : MonoBehaviour
 {
-    // === Singleton Instance ===
-    // Allows other scripts to quickly check UI state by calling UIManager.Instance
     public static UIManager Instance;
 
     [Header("UI References")]
-    public GameObject inventoryPanel; // Reference to the inventory UI panel
-    public GameObject gameMenu;       // Reference to the game menu (pause/settings/etc.)
+    public GameObject inventoryPanel;
+    public GameObject gameMenu;
 
-    // --- Unity lifecycle ---
+    [Header("Game Over / Win")]
+    public GameObject losePanel;
+    public GameObject winPanel;
+
     void Awake()
     {
-        // Assign the singleton instance so this class can be accessed globally
         Instance = this;
     }
 
-    /// <summary>
-    /// Returns true if either the inventory panel or the game menu is currently open.
-    /// Used to block player actions (like attacking) while menus are active.
-    /// </summary>
+    void Start()
+    {
+        // Make sure ALL panels are hidden at game start
+        if (inventoryPanel != null) inventoryPanel.SetActive(false);
+        if (gameMenu != null) gameMenu.SetActive(false);
+        if (losePanel != null) losePanel.SetActive(false);
+        if (winPanel != null) winPanel.SetActive(false);
+    }
+
     public bool IsAnyMenuOpen()
     {
-        return inventoryPanel.activeSelf || gameMenu.activeSelf;
+        return (inventoryPanel != null && inventoryPanel.activeSelf)
+            || (gameMenu != null && gameMenu.activeSelf)
+            || (losePanel != null && losePanel.activeSelf)
+            || (winPanel != null && winPanel.activeSelf);
+    }
+
+    public void ShowLoseMenu()
+    {
+        if (losePanel != null)
+            losePanel.SetActive(true);
+    }
+
+    public void ShowWinMenu()
+    {
+        if (winPanel != null)
+            winPanel.SetActive(true);
     }
 }

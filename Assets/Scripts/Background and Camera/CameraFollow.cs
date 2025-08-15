@@ -9,6 +9,13 @@ public class CameraFollow : MonoBehaviour
 
     void LateUpdate()
     {
+        if (player == null)
+        {
+            Debug.LogWarning("CameraFollow: Player reference is missing. Camera will stop following.");
+            return; // Skip following if player is gone
+        }
+
+
         // Target position for the camera (player position + offset)
         Vector3 desiredPosition = player.position + offset;
         // Smoothly interpolate from current position to desired position
