@@ -2,23 +2,29 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float moveSpeed = 5f;
-    public float jumpForce = 10f;
-    public float dodgeSpeed = 12f;
-    public float dodgeDuration = 0.2f;
-    public float dodgeCooldownTime = 1f;
-
-    [SerializeField] private LayerMask groundLayer;
-    [SerializeField] private LayerMask wallLayer;
-
     private Rigidbody2D rb;
     private Animator anim;
     private BoxCollider2D boxCollider;
 
+    public ParticleSystem Walking;
+
+
+    [Header("Movement")]
+    public float moveSpeed = 5f;
+    public float jumpForce = 10f;
+
+    [Header("Dodging")]
+    public float dodgeSpeed = 12f;
+    public float dodgeDuration = 0.2f;
+    public float dodgeCooldownTime = 1f;
     private bool isDodging = false;
     private float dodgeTimer = 0f;
     private float dodgeCooldownTimer = 0f;
     private float moveInput;
+
+    [SerializeField] private LayerMask groundLayer;
+    [SerializeField] private LayerMask wallLayer;
+
 
     void Start()
     {
