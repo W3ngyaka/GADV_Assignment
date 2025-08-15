@@ -26,6 +26,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private LayerMask wallLayer;
 
+    // --- Unity lifecycle: mostly one-liners; kept inline per your rule ---
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -37,18 +38,39 @@ public class PlayerMovement : MonoBehaviour
             walkingParticles.Stop();
     }
 
+    // --- Unity lifecycle: delegate multi-line logic to a helper ---
     void Update()
     {
-        // Input only (non-physics logic)
+        HandleUpdate(); // input, sprite flip, particles, jump/dodge input, animator booleans
+    }
+
+    // --- Unity lifecycle: delegate multi-line physics logic to a helper ---
+    void FixedUpdate()
+    {
+        HandleFixedUpdate(); // cooldowns, dodge movement, or standard horizontal movement
+    }
+
+    // Property helper to check facing direction (unchanged)
+    public bool IsFacingRight
+    {
+        get { return transform.localScale.x > 0; }
+    }
+
+    // --- Private helpers (extracted from Update/FixedUpdate; functionality unchanged) ---
+
+    // Collects non-physics per-frame logic: input, visuals, and animator state updates
+    private void HandleUpdate()
+    {
+        // 1) Read horizontal input (-1, 0, 1)
         moveInput = Input.GetAxisRaw("Horizontal");
 
-        // Handle sprite flip
+        // 2) Flip sprite based on input direction
         if (moveInput > 0)
             transform.localScale = new Vector3(2, 2, 2);
         else if (moveInput < 0)
             transform.localScale = new Vector3(-2, 2, 2);
 
-        // Handle walking particles
+        // 3) Handle walking particles (play only when moving on ground and not dodging)
         if (walkingParticles != null)
         {
             if (moveInput != 0 && isGrounded() && !isDodging)
@@ -63,37 +85,40 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
-        // Handle jump input
+        // 4) Jump input (space) — only when grounded
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded())
         {
             Jump();
         }
 
-        // Handle dodge input
+        // 5) Dodge input (Left Shift) — only when off cooldown and not already dodging
         if (Input.GetKeyDown(KeyCode.LeftShift) && dodgeCooldownTimer <= 0f && !isDodging)
         {
             StartDodge();
         }
 
-        // Animator logic (not physics)
+        // 6) Animator parameters (booleans only; no physics)
         anim.SetBool("run", moveInput != 0 && !isDodging);
         anim.SetBool("grounded", isGrounded());
         anim.SetBool("fall", IsFalling());
     }
 
-    void FixedUpdate()
+    // Physics-step movement & dodge handling
+    private void HandleFixedUpdate()
     {
-        // Update dodge cooldown
+        // Update dodge cooldown timer
         if (dodgeCooldownTimer > 0f)
             dodgeCooldownTimer -= Time.fixedDeltaTime;
 
         if (isDodging)
         {
+            // While dodging, force horizontal velocity in facing direction
             dodgeTimer -= Time.fixedDeltaTime;
 
             float direction = Mathf.Sign(transform.localScale.x);
             rb.linearVelocity = new Vector2(direction * dodgeSpeed, rb.linearVelocity.y);
 
+            // End dodge when timer expires
             if (dodgeTimer <= 0f)
             {
                 isDodging = false;
@@ -101,14 +126,12 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
+            // Normal horizontal movement (preserve vertical velocity)
             rb.linearVelocity = new Vector2(moveInput * moveSpeed, rb.linearVelocity.y);
         }
     }
 
-    public bool IsFacingRight
-    {
-        get { return transform.localScale.x > 0; }
-    }
+    // --- Existing methods (unchanged logic/names) ---
 
     private void StartDodge()
     {

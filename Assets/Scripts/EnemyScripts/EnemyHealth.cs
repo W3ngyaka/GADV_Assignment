@@ -2,42 +2,31 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 
-
 public class EnemyHealth : MonoBehaviour
 {
     [Header("Health Settings")]
     public int maxHealth = 1;
     private int currentHealth;
-    private Slider healthBar;
+    private Slider healthBar; // Now private since we'll find it automatically
 
     private Rigidbody2D rb;
     private Animator anim;
 
     [Header("Drop Settings")]
-    public GameObject[] alphabetDropPrefabs; // Updated to array of prefabs
+    public GameObject[] alphabetDropPrefabs;
 
+    // --- Unity lifecycle: delegate multi-line work to helpers ---
     void Start()
     {
-        currentHealth = maxHealth;
-        Debug.Log($"{gameObject.name} HP: {currentHealth}");
-        rb = GetComponent<Rigidbody2D>();
-        anim = GetComponent<Animator>();
-
-        healthBar = GetComponentInChildren<Slider>(true);
-
-        if (healthBar != null)
-        {
-            healthBar.gameObject.SetActive(true);
-            healthBar.maxValue = maxHealth;
-            healthBar.value = currentHealth;
-        }
+        Initialize(); // sets components, currentHealth, and health bar state
     }
 
+    // Apply damage, update UI, and trigger death/hurt as appropriate
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
-        Debug.Log($"{gameObject.name} HP: {currentHealth}");
 
+        // Update health bar value
         if (healthBar != null)
         {
             healthBar.value = currentHealth;
@@ -53,8 +42,12 @@ public class EnemyHealth : MonoBehaviour
         }
     }
 
+    // Handle death animation, physics/collider disabling, and delayed cleanup
     private void Die()
     {
+        if (healthBar != null)
+            healthBar.gameObject.SetActive(false);
+
         anim.SetTrigger("die");
         rb.linearVelocity = Vector2.zero;
         rb.simulated = false;
@@ -62,6 +55,7 @@ public class EnemyHealth : MonoBehaviour
         StartCoroutine(DelayedDeath());
     }
 
+    // Wait briefly, optionally drop a random alphabet prefab, then destroy enemy
     private IEnumerator DelayedDeath()
     {
         yield return new WaitForSeconds(1.0f);
@@ -73,5 +67,42 @@ public class EnemyHealth : MonoBehaviour
         }
 
         Destroy(gameObject);
+    }
+
+    // --- Helpers (extracted from Start; functionality unchanged) ---
+
+    // Orchestrates initial setup
+    private void Initialize()
+    {
+        InitializeComponents();
+        InitializeHealthValues();
+        InitializeHealthBar();
+    }
+
+    // Cache required components (Rigidbody2D, Animator, Slider)
+    private void InitializeComponents()
+    {
+        rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
+
+        // Automatically find the health bar in children (active or inactive)
+        healthBar = GetComponentInChildren<Slider>(true);
+    }
+
+    // Set starting health numbers
+    private void InitializeHealthValues()
+    {
+        currentHealth = maxHealth;
+    }
+
+    // Configure the health bar's visibility, range, and starting value
+    private void InitializeHealthBar()
+    {
+        if (healthBar != null)
+        {
+            healthBar.gameObject.SetActive(true);
+            healthBar.maxValue = maxHealth;
+            healthBar.value = currentHealth;
+        }
     }
 }
