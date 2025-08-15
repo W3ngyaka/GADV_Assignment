@@ -6,8 +6,9 @@ public class PlayerMovement : MonoBehaviour
     private Animator anim;
     private BoxCollider2D boxCollider;
 
-    public ParticleSystem Walking;
-
+    [Header("Effects")]
+    public ParticleSystem walkingParticles;
+    public ParticleSystem jumpingParticles;
 
     [Header("Movement")]
     public float moveSpeed = 5f;
@@ -25,13 +26,16 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private LayerMask wallLayer;
 
-
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         boxCollider = GetComponent<BoxCollider2D>();
-    } 
+
+        // Initialize particles
+        if (walkingParticles != null)
+            walkingParticles.Stop();
+    }
 
     void Update()
     {
@@ -43,6 +47,21 @@ public class PlayerMovement : MonoBehaviour
             transform.localScale = new Vector3(2, 2, 2);
         else if (moveInput < 0)
             transform.localScale = new Vector3(-2, 2, 2);
+
+        // Handle walking particles
+        if (walkingParticles != null)
+        {
+            if (moveInput != 0 && isGrounded() && !isDodging)
+            {
+                if (!walkingParticles.isPlaying)
+                    walkingParticles.Play();
+            }
+            else
+            {
+                if (walkingParticles.isPlaying)
+                    walkingParticles.Stop();
+            }
+        }
 
         // Handle jump input
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded())
@@ -86,18 +105,43 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    public bool IsFacingRight
+    {
+        get { return transform.localScale.x > 0; }
+    }
+
     private void StartDodge()
     {
         isDodging = true;
         dodgeTimer = dodgeDuration;
         dodgeCooldownTimer = dodgeCooldownTime;
         anim.SetTrigger("dodge");
+
+        // Stop particles during dodge
+        if (walkingParticles != null && walkingParticles.isPlaying)
+            walkingParticles.Stop();
     }
 
     private void Jump()
     {
         rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
         anim.SetTrigger("jump");
+
+        // Handle jumping particles
+        if (jumpingParticles != null)
+        {
+            // Only play if not already playing
+            if (!jumpingParticles.isPlaying)
+            {
+                jumpingParticles.Play();
+            }
+        }
+
+        // Stop walking particles
+        if (walkingParticles != null && walkingParticles.isPlaying)
+        {
+            walkingParticles.Stop();
+        }
     }
 
     private bool isGrounded()
@@ -115,7 +159,6 @@ public class PlayerMovement : MonoBehaviour
 
     private bool IsFalling()
     {
-        // Returns true if player is moving downward and not grounded
         return rb.linearVelocity.y < -0.1f && !isGrounded();
     }
 }
